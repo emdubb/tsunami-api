@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214175432) do
+ActiveRecord::Schema.define(version: 20151214201100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20151214175432) do
     t.string   "closure_title"
     t.string   "closure_url"
     t.string   "railway_title"
-    t.string   "railway_rul"
+    t.string   "railway_url"
     t.string   "biketrail_title"
     t.string   "biketrail_url"
     t.string   "beach_access_title"
@@ -64,11 +64,19 @@ ActiveRecord::Schema.define(version: 20151214175432) do
   create_table "maps", force: :cascade do |t|
     t.integer  "city_id"
     t.string   "name"
-    t.string   "type"
+    t.string   "map_type"
     t.string   "map_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "maps_users", id: false, force: :cascade do |t|
+    t.integer "map_id"
+    t.integer "user_id"
+  end
+
+  add_index "maps_users", ["map_id"], name: "index_maps_users_on_map_id", using: :btree
+  add_index "maps_users", ["user_id"], name: "index_maps_users_on_user_id", using: :btree
 
   create_table "pins", force: :cascade do |t|
     t.string   "name"
