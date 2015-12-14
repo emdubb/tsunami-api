@@ -18,11 +18,10 @@ coronado_city = City.create(
   station: nil
 )
 
-test_user = User.create(
+user1 = User.create(
   fname: "John",
   lname: "Smith",
-  email: "test@email.com",
-  password: "abc123",
+  email: "test1@email.com",
   default_map: nil,
   emer_hospital: nil,
   emer_meeting_area: nil,
@@ -34,10 +33,40 @@ test_user = User.create(
   emer_phone3: nil
 )
 
+user2 = User.create(
+  fname: "Rachel",
+  lname: "Bascetta",
+  email: "test2@email.com",
+  default_map: nil,
+  emer_hospital: nil,
+  emer_meeting_area: nil,
+  emer_name1: "Mom",
+  emer_phone1: "1234567890",
+  emer_name2: nil,
+  emer_phone2: nil,
+  emer_name3: nil,
+  emer_phone3: nil
+)
+
+user3 = User.create(
+  fname: "Melissa",
+  lname: "Wilcox",
+  email: "test3@email.com",
+  default_map: nil,
+  emer_hospital: nil,
+  emer_meeting_area: nil,
+  emer_name1: "Dad",
+  emer_phone1: "0987654321",
+  emer_name2: nil,
+  emer_phone2: nil,
+  emer_name3: nil,
+  emer_phone3: nil
+)
+
 coronado_map = Map.create(
   city_id: nil,
   name: "Zone 1",
-  type: "Walking",
+  map_type: "Walking",
   map_url: nil
 )
 
@@ -51,7 +80,7 @@ coronado_legend = Legend.create(
   closure_title: "Possible Closure Due to Flooding",
   closure_url: nil,
   railway_title: "Railway",
-  railway_rul: nil,
+  railway_url: nil,
   biketrail_title: nil,
   biketrail_url: nil,
   beach_access_title: nil,
@@ -69,7 +98,7 @@ coronado_legend = Legend.create(
   hospital_url: nil
 )
 
-test_pin = Pin.create (
+test_pin = Pin.create(
   name: "Home",
   address: "501 W Olympic Blvd",
   phone: "9712429522",
