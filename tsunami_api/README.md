@@ -18,7 +18,7 @@ Run `bundle install`
 
 Rails Route | HTTP Verb | Path/Resource      | Response Content           | Access  | Errors
 :----------:|:---------:|--------------------|----------------------------|:-------:|---------
-**INDEX**   | `GET`     | `/api`             | A list of all available API routes (JSON)| -       |
+**INDEX**   | `GET`     | `/`             | A list of all available API routes (JSON)| -       |
 **INDEX**   | `GET`     | `/api/maps/index`  | A lis of all maps (JSON)   | -       |
 **SHOW**    | `GET`     | `/api/maps/:id`    | A map's information (JSON) | -       |
 **CREATE**  | `POST`    | `/api/maps`        | Post a new map             | Admin   |
@@ -30,7 +30,7 @@ Rails Route | HTTP Verb | Path/Resource      | Response Content           | Acce
 **UPDATE**  | `PUT`     | `/api/users/:id`   | Edit a user's information (JSON) | User    |
 **DESTROY** | `DELETE`  | `/api/users/:id`   | Delete a user              | User    |
 **CREATE**  | `POST`    | `/api/token`       | A new token                | User    |
-**SHOW**    | `GET`     | `/me`              | The current user's authenticated information        | User    |
+**SHOW**    | `GET`     | `/api/me`          | The current user's authenticated information        | User    |
 
 *Admin has access to all routes that users have access to*
 
