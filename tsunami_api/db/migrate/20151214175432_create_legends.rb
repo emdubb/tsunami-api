@@ -10,7 +10,7 @@ class CreateLegends < ActiveRecord::Migration
       t.string :closure_title
       t.string :closure_url
       t.string :railway_title
-      t.string :railway_rul
+      t.string :railway_url
       t.string :biketrail_title
       t.string :biketrail_url
       t.string :beach_access_title
