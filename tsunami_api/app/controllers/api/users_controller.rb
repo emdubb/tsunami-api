@@ -1,6 +1,7 @@
 require 'auth_token'
 class Api::UsersController < ApplicationController
 
+  # POST /api/users
   def create
     user = User.new(user_params)
 
@@ -11,6 +12,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  # POST /api/token
   def token
     user = User.find_by(email: user_params[:email])
     if user && user.authenticate(user_params[:password])
@@ -22,9 +24,9 @@ class Api::UsersController < ApplicationController
     else
       render status: :unauthorized
     end
-
   end
 
+  # GET /api/me
   def me
     auth_header = request.headers["Authorization"]
 
@@ -50,7 +52,7 @@ class Api::UsersController < ApplicationController
     render json: User.all
   end
 
-  # GET /api/user/:id
+  # GET /api/users/:id
   def show
     if user = User.find(params[:id])
       render json: user
@@ -59,12 +61,26 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  # PATCH/PUT /user/s:id
   def update
+    user = User.find(params[:id])
 
+    if user && fish.update(user_params)
+      render json: user
+    else
+      render status: :unprocessable_entity
+    end
   end
 
+  # DELET /users/:id
   def destroy
+    user = User.find(params[:id])
 
+    if user && user.destroy
+      render json: user
+    else
+      render status: :unprocessable_entity
+    end
   end
 
   private
