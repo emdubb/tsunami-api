@@ -44,7 +44,6 @@ class Api::UsersController < ApplicationController
     else
       render status: :bad_request
     end
-
   end
 
   # GET /api/users
@@ -61,18 +60,18 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /user/s:id
+  # PATCH/PUT /users/:id
   def update
     user = User.find(params[:id])
 
-    if user && fish.update(user_params)
+    if user && user.update(user_params)
       render json: user
     else
       render status: :unprocessable_entity
     end
   end
 
-  # DELET /users/:id
+  # DELETE /users/:id
   def destroy
     user = User.find(params[:id])
 
@@ -85,6 +84,8 @@ class Api::UsersController < ApplicationController
 
   private
     def user_params
-      params.permit(:name, :email, :password)
+      params.require(:user).permit(:fname, :lname, :email, :password,
+        :default_map, :emer_hospital, :emer_meeting_area, :emer_name1,
+        :emer_phone1, :emer_name2, :emer_phone2, :emer_name3, :emer_phone3)
     end
 end
