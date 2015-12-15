@@ -50,11 +50,7 @@ class Api::UsersController < ApplicationController
 
   # GET /api/users/:id
   def show
-    if user = User.find(params[:id])
-      render json: user
-    else
-      render status: :not_found
-    end
+    render status: :not_found unless @user = User.find(params[:id])
   end
 
   # PATCH/PUT /users/:id
