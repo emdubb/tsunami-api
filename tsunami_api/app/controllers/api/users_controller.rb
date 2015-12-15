@@ -1,6 +1,8 @@
 require 'auth_token'
 class Api::UsersController < ApplicationController
 
+  # before_action :authorize, except: [:create]
+
   # POST /api/users
   def create
     user = User.new(user_params)
@@ -56,6 +58,11 @@ class Api::UsersController < ApplicationController
   # PATCH/PUT /users/:id
   def update
     user = User.find(params[:id])
+
+    if params[:user]['maps']
+      map_id = params[:user]['maps']['id']
+      user.add_map! (map_id)
+    end
 
     if user && user.update(user_params)
       render json: user
