@@ -5,8 +5,14 @@ class Api::UsersController < ApplicationController
 
   # POST /api/users
   def create
-    user = User.new(user_params)
-    render json: user
+    user = User.create(user_params)
+
+    if user.save
+      token
+      # render json: user
+    else
+      render status: :unprocessable_entity
+    end
   end
 
   # POST /api/token
