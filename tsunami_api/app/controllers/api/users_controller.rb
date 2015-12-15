@@ -34,13 +34,10 @@ class Api::UsersController < ApplicationController
       auth_token = auth_header.split(' ').last
       credentials = AuthToken.decode(auth_token)
 
-      user = User.find_by(email: credentials[:email])
+      @user = User.find_by(email: credentials[:email])
 
-      if user
-        render json: user
-      else
-        render status: :not_found
-      end
+      render status: :not_found unless @user
+
     else
       render status: :bad_request
     end
