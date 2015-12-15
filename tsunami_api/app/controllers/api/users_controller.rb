@@ -45,7 +45,7 @@ class Api::UsersController < ApplicationController
 
   # GET /api/users
   def index
-    render json: User.all
+    @users = User.all
   end
 
   # GET /api/users/:id
@@ -83,6 +83,6 @@ class Api::UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:fname, :lname, :email, :password,
         :default_map, :emer_hospital, :emer_meeting_area, :emer_name1,
-        :emer_phone1, :emer_name2, :emer_phone2, :emer_name3, :emer_phone3)
+        :emer_phone1, :emer_name2, :emer_phone2, :emer_name3, :emer_phone3, :maps)
     end
 end
