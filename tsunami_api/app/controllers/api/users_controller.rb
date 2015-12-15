@@ -1,7 +1,7 @@
 require 'auth_token'
 class Api::UsersController < ApplicationController
 
-  # before_action :authorize, except: [:create]
+  before_action :authorize, except: [:create, :token]
 
   # POST /api/users
   def create
@@ -30,19 +30,19 @@ class Api::UsersController < ApplicationController
 
   # GET /api/me
   def me
-    auth_header = request.headers["Authorization"]
+    # auth_header = request.headers["Authorization"]
 
-    if auth_header
-      auth_token = auth_header.split(' ').last
-      credentials = AuthToken.decode(auth_token)
+    # if auth_header
+    #   auth_token = auth_header.split(' ').last
+    #   credentials = AuthToken.decode(auth_token)
 
       @user = User.find_by(email: credentials[:email])
 
       render status: :not_found unless @user
 
-    else
-      render status: :bad_request
-    end
+    # else
+    #   render status: :bad_request
+    # end
   end
 
   # GET /api/users

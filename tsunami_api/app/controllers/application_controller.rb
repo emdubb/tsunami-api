@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   def authorize
+    auth_header = request.headers["Authorization"]
 
+    if auth_header
+      auth_token = auth_header.split(' ').last
+      credentials = AuthToken.decode(auth_token)
+    else
+      render status: :unauthorized
+    end
   end
 
-  private
-     # Make the current_user method available to views, not just controllers!
-    helper_method :current_user
-
-    def current_user
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
 end
