@@ -146,9 +146,9 @@ pin3 = Pin.create(
   coordinates: nil
 )
 
-# map1 << pin1
-# map1 << pin2
-# map2 << pin3
+map1.pins << pin1
+map1.pins << pin2
+map2.pins << pin3
 
 coronado_city.maps << map1
 coronado_city.maps << map2
