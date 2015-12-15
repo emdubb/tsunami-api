@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
     if auth_header
       auth_token = auth_header.split(' ').last
-      credentials = AuthToken.decode(auth_token)
+      @credentials = AuthToken.decode(auth_token)
     else
       render status: :unauthorized
     end
