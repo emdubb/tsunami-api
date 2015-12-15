@@ -6,12 +6,7 @@ class Api::UsersController < ApplicationController
   # POST /api/users
   def create
     user = User.new(user_params)
-
-    if user.save
-      render json: user
-    else
-      render status: :unprocessable_entity
-    end
+    render json: user
   end
 
   # POST /api/token
@@ -53,6 +48,7 @@ class Api::UsersController < ApplicationController
 
     if params[:user]['maps']
       map_id = params[:user]['maps']['id']
+      !user.default_map? user.default_map = map_id
       user.add_map! (map_id)
     end
 
