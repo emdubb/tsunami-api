@@ -1,4 +1,4 @@
 class Pin < ActiveRecord::Base
-  has_one :map
-  belongs_to :map
+  # belongs_to :map
+  # has_one :map
 end

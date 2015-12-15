@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215002327) do
+ActiveRecord::Schema.define(version: 20151215051537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,13 @@ ActiveRecord::Schema.define(version: 20151215002327) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "legends", force: :cascade do |t|
+  create_table "maps", force: :cascade do |t|
+    t.integer  "city_id"
+    t.string   "name"
+    t.string   "map_type"
+    t.string   "map_url"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "flood_area_title"
     t.string   "flood_area_url"
     t.string   "naval_area_title"
@@ -57,17 +63,6 @@ ActiveRecord::Schema.define(version: 20151215002327) do
     t.string   "hospital_title"
     t.string   "hospital_locations"
     t.string   "hospital_url"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  create_table "maps", force: :cascade do |t|
-    t.integer  "city_id"
-    t.string   "name"
-    t.string   "map_type"
-    t.string   "map_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "maps_users", id: false, force: :cascade do |t|
@@ -85,6 +80,7 @@ ActiveRecord::Schema.define(version: 20151215002327) do
     t.string   "coordinates"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "map_id"
   end
 
   create_table "users", force: :cascade do |t|
