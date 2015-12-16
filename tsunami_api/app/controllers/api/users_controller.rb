@@ -64,7 +64,6 @@ class Api::UsersController < ApplicationController
         end
       elsif params[:remove]
         user.remove_map!(map)
-        # user.maps.delete(map)
         render json: {message: "User no longer has map.", map: map.id, user: user.id, default_map: user.default_map}
       elsif params[:default]
         user.change_default_map!(map)
