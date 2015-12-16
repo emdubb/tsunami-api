@@ -2,6 +2,11 @@ class City < ActiveRecord::Base
 
   before_action :authorize, except: [:index, :show]
 
+  #GET /api/cities
+  def index
+    @cities = City.all
+  end
+
   #POST /api/cities
   def create
     city = City.create(city_params)
@@ -17,6 +22,7 @@ class City < ActiveRecord::Base
   def show
     render status: :not_found unless @city = City.find(params[:id])
   end
+
 
 
   private
