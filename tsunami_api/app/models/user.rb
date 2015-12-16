@@ -8,20 +8,30 @@ class User < ActiveRecord::Base
   def add_map!(map)
     maps << map
     if maps.length == 1
-      default_map = map.id
+      update_attributes(:default_map => map.id)
+      add_info!(map)
       save!
     end
   end
 
-  def add_info!(map_id)
-    map = Map.find(map_id)
-    update_attributes(:emer_hospital => map.hospital_locations) unless emer_hospital
-    update_attributes(:emer_meeting_area => map.evacuation_locations || map.refuge_locations) unless emer_meeting_area
+  def add_info!(map)
+    update_attributes(:emer_hospital => map.hospital_locations)
+    update_attributes(:emer_meeting_area => map.evacuation_locations || map.refuge_locations)
   end
 
-  def remove_map!(map_id)
-    map = Map.find(map_id)
+  def change_default_map!(map)
+    maps << map unless maps.include?(map)
+    update_attributes(:default_map => map.id)
+    add_info!(map)
+    save!
+  end
+
+  def remove_map!(map)
     maps.delete(map)
+    if maps.length >= 1
+      # update_attributes(:default_map => maps.first.id)
+      change_default_map!(maps.first)
+    end
   end
 
 end

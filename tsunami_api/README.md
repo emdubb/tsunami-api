@@ -50,6 +50,9 @@ Query argument | Value
 `map_id`       | *Optional.* An integer referencing a map id
 `add`          | *Optional.* A boolean. Provide this parameter along with a map id to assign a map to the user
 `remove`       | *Optional.* A boolean. Provide this parameter along with a map id to remove a map to the user
+`default`      | *Optional.* A boolean. Provide this parameter along with a map id change a users default map and corresponding information
+
+To update attrubutes of the user send JSON in the body of the request.
 
 **Response Format**
 

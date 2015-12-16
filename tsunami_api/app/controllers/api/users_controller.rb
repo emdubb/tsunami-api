@@ -63,10 +63,14 @@ class Api::UsersController < ApplicationController
           render json: {message: "Map added to user", map: map.id, user: user.id}
         end
       elsif params[:remove]
-        user.maps.delete(map)
-        render json: {message: "User no longer has map.", map: map.id, user: user.id}
+        user.remove_map!(map)
+        # user.maps.delete(map)
+        render json: {message: "User no longer has map.", map: map.id, user: user.id, default_map: user.default_map}
+      elsif params[:default]
+        user.change_default_map!(map)
+        render json: {message: "User default map updated", default_map: map.id, user: user.id}
       else
-        render json: {message: "Missing params for map action: add or remove."}
+        render json: {message: "Missing params for map action: add, remove, or default."}
       end
     else
       render json: {message: "Missing map_id parameter."}
