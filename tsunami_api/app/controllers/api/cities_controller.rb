@@ -5,6 +5,7 @@ class Api::CitiesController < ApplicationController
   #GET /api/cities
   def index
     @cities = City.all
+    # render json: City.all
   end
 
   #POST /api/cities
@@ -23,6 +24,27 @@ class Api::CitiesController < ApplicationController
     render status: :not_found unless @city = City.find(params[:id])
   end
 
+  #PATCH/PUT /users/:id
+  def update
+    city = City.find(params[:id])
+
+    if city && city.update(city_params)
+      render json: city
+    else
+      render status: :unprocessable_entity
+    end
+  end
+
+  #DELETE /users/:id
+  def destroy
+    city = City.find(params[:id])
+
+    if city && city.destroy
+      render json: city
+    else
+      render status: :unprocessable_entity
+    end
+  end
 
   private
     def city_params
