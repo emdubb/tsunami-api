@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [:index, :show, :create, :update, :destroy]
     resources :maps, only: [:index, :show, :create, :update, :destroy]
+    resources :cities, only: [:index, :show, :create, :update, :destroy]
 
     get 'me', to: 'users#me'
     post 'token', to: 'users#token'
