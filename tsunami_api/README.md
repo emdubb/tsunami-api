@@ -14,25 +14,45 @@ in Southern California.
 
 Run `bundle install`
 
-### Routes
+## Endpoint Reference
 
-Rails Route | HTTP Verb | Path/Resource      | Response Content           | Access  | Errors
-:----------:|:---------:|--------------------|----------------------------|:-------:|---------
-**INDEX**   | `GET`     | `/`             | A list of all available API routes (JSON)| -       |
-**INDEX**   | `GET`     | `/api/maps/index`  | A lis of all maps (JSON)   | -       |
-**SHOW**    | `GET`     | `/api/maps/:id`    | A map's information (JSON) | -       |
-**CREATE**  | `POST`    | `/api/maps`        | Post a new map             | Admin   |
-**UPDATE**  | `PUT`     | `/api/maps/:id`    | Edit a map's information   | Admin   |
-**DESTROY** | `DELETE`  | `/api/maps/:id`    | Delete a map               | Admin   |
-**INDEX**   | `GET`     | `/api/users/index` | A list of all users (JSON) | Admin   |
-**SHOW**    | `GET`     | `/api/users/:id`   | A user's information (JSON)| User    |
-**CREATE**  | `POST`    | `/api/users`       | Create a new user          | User    |
-**UPDATE**  | `PUT`     | `/api/users/:id`   | Edit a user's information (JSON) | User    |
-**DESTROY** | `DELETE`  | `/api/users/:id`   | Delete a user              | User    |
-**CREATE**  | `POST`    | `/api/token`       | A new token                | User    |
-**SHOW**    | `GET`     | `/api/me`          | The current user's authenticated information        | User    |
+Rails Route | HTTP Verb | Endpoint           | Access    
+:----------:|:---------:|--------------------|:---------------:
+**INDEX**   | `GET`     | `/`                | 
+**INDEX**   | `GET`     | `/api/users`       | token required
+**CREATE**  | `POST`    | `/api/users`       | 
+**SHOW**    | `GET`     | `/api/users/:id`   | token required
+**UPDATE**  | `PATCH`   | [`/api/users/:id`][postUser]   | token required
+**UPDATE**  | `PUT`     | `/api/users/:id`   | token required
+**DESTROY** | `DELETE`  | `/api/users/:id`   | token required
+**INDEX**   | `GET`     | `/api/maps/`       | 
+**CREATE**  | `POST`    | `/api/maps`        | token required
+**SHOW**    | `GET`     | `/api/maps/:id`    | 
+**UPDATE**  | `PATCH`   | `/api/maps/:id`    | token required
+**UPDATE**  | `PUT`     | `/api/maps/:id`    | token required
+**DESTROY** | `DELETE`  | `/api/maps/:id`    | token required
+**CREATE**  | `POST`    | `/api/token`       | 
+**SHOW**    | `GET`     | `/api/me`          | token required
 
-*Admin has access to all routes that users have access to*
+[postUser]:
+### Update User 
+
+**Endpoint**
+
+```PATCH https://domain.com/api/users/:id```
+
+**Request Parameters**
+
+Query argument | Value
+---------------|------------------------------
+`map_id`       | *Optional.* An integer referencing a map id
+`add`          | *Optional.* A boolean. Provide this parameter along with a map id to assign a map to the user
+`remove`       | *Optional.* A boolean. Provide this parameter along with a map id to remove a map to the user
+
+**Response Format**
+On success, the HTTP status code in the response header is 200 OK and the response body contains a a success message, the user id, and added/removed map id JSON format. On error, the header status code is an error code and the response body contains a rails error message.
+
+
 
 ### Error Codes
 
