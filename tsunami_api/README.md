@@ -16,25 +16,25 @@ Run `bundle install`
 
 ## Endpoint Reference
 
-Rails Route | HTTP Verb | Endpoint           | Access    
-:----------:|:---------:|--------------------|:---------------:
-**INDEX**   | `GET`     | `/`                | 
-**INDEX**   | `GET`     | `/api/users`       | token required
-**CREATE**  | `POST`    | `/api/users`       | 
-**SHOW**    | `GET`     | `/api/users/:id`   | token required
-**UPDATE**  | `PATCH`   | [`/api/users/:id`][postUser]   | token required
-**UPDATE**  | `PUT`     | `/api/users/:id`   | token required
-**DESTROY** | `DELETE`  | `/api/users/:id`   | token required
-**INDEX**   | `GET`     | `/api/maps/`       | 
-**CREATE**  | `POST`    | `/api/maps`        | token required
-**SHOW**    | `GET`     | `/api/maps/:id`    | 
-**UPDATE**  | `PATCH`   | `/api/maps/:id`    | token required
-**UPDATE**  | `PUT`     | `/api/maps/:id`    | token required
-**DESTROY** | `DELETE`  | `/api/maps/:id`    | token required
-**CREATE**  | `POST`    | `/api/token`       | 
-**SHOW**    | `GET`     | `/api/me`          | token required
+Rails Route | HTTP Verb | Endpoint                      | Access    
+:----------:|:---------:|-------------------------------|:---------------:
+**INDEX**   | `GET`     | `/`                           | 
+**INDEX**   | `GET`     | `/api/users`                  | token required
+**CREATE**  | `POST`    | `/api/users`                  | 
+**SHOW**    | `GET`     | `/api/users/:id`              | token required
+**UPDATE**  | `PATCH`   | [`/api/users/:id`](#postUser) | token required
+**UPDATE**  | `PUT`     | `/api/users/:id`              | token required
+**DESTROY** | `DELETE`  | `/api/users/:id`              | token required
+**INDEX**   | `GET`     | `/api/maps/`                  | 
+**CREATE**  | `POST`    | `/api/maps`                   | token required
+**SHOW**    | `GET`     | `/api/maps/:id`               | 
+**UPDATE**  | `PATCH`   | `/api/maps/:id`               | token required
+**UPDATE**  | `PUT`     | `/api/maps/:id`               | token required
+**DESTROY** | `DELETE`  | `/api/maps/:id`               | token required
+**CREATE**  | `POST`    | `/api/token`                  | 
+**SHOW**    | `GET`     | `/api/me`                     | token required
 
-[postUser]:
+<a name="postUser"></a>
 ### Update User 
 
 **Endpoint**
