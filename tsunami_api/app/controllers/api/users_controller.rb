@@ -55,7 +55,9 @@ class Api::UsersController < ApplicationController
     if params[:user]['maps']
       map_id = params[:user]['maps']['id']
       user.default_map = map_id unless user.default_map
+      user.add_info! (map_id)
       user.add_map! (map_id)
+      user.save
     end
 
     if user && user.update(user_params)

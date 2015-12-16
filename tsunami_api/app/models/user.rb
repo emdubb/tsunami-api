@@ -10,4 +10,10 @@ class User < ActiveRecord::Base
     maps << Map.find(map)
   end
 
+  def add_info! (map_id)
+    map = Map.find(map_id)
+    update_attributes(:emer_hospital => map.hospital_locations) unless emer_hospital
+    update_attributes(:emer_meeting_area => map.evacuation_locations || map.refuge_locations) unless emer_meeting_area
+  end
+
 end
