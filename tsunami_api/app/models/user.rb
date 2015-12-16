@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
   def remove_map!(map)
     maps.delete(map)
     if maps.length >= 1
-      # update_attributes(:default_map => maps.first.id)
       change_default_map!(maps.first)
     end
   end
