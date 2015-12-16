@@ -8,6 +8,8 @@ in Southern California.
 ## Technologies Used
 
 * Ruby/Rails
+* jBuilder
+* jwt
 * [PostgreSQL](http://www.postgresql.org/docs/)
 
 ## Getting Started
