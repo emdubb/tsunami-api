@@ -52,18 +52,24 @@ class Api::UsersController < ApplicationController
   def update
     user = User.find(params[:id])
 
-    if params[:user]['maps']
-      map_id = params[:user]['maps']['id']
-      user.default_map = map_id unless user.default_map
-      user.add_info! (map_id)
-      user.add_map! (map_id)
-      user.save
-    end
+    if params[:map_id]
+      map = Map.find(params[:map_id])
 
-    if user && user.update(user_params)
-      render json: user
+      if params[:add]
+        if user.maps.include?(map)
+          render json: {message: "Map already added!"}
+        else
+          user.add_map! map
+          render json: {message: "Map added to user", map: map.id, user: user.id}
+        end
+      elsif params[:remove]
+        user.maps.delete(map)
+        render json: {message: "User no longer has map.", map: map.id, user: user.id}
+      else
+        render json: {message: "Missing params for map action: add or remove."}
+      end
     else
-      render status: :unprocessable_entity
+      render json: {message: "Missing map_id parameter."}
     end
   end
 
