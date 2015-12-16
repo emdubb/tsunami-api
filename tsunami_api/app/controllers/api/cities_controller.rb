@@ -13,6 +13,10 @@ class City < ActiveRecord::Base
     end
   end
 
+  #GET /api/cities/:id
+  def show
+    render status: :not_found unless @city = City.find(params[:id])
+  end
 
 
   private
