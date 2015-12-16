@@ -1,5 +1,7 @@
 class City < ActiveRecord::Base
 
+  before_action :authorize, except: [:index, :show]
+
   #POST /api/cities
   def create
     city = City.create(city_params)
@@ -10,6 +12,8 @@ class City < ActiveRecord::Base
       render status: :unprocessable_entity
     end
   end
+
+
 
   private
     def city_params
