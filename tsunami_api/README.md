@@ -39,7 +39,7 @@ Rails Route | HTTP Verb | Endpoint                      | Access
 
 **Endpoint**
 
-```PATCH https://domain.com/api/users/:id```
+```PATCH http://localhost:3000/api/users/:id```
 
 **Request Parameters**
 
@@ -50,9 +50,19 @@ Query argument | Value
 `remove`       | *Optional.* A boolean. Provide this parameter along with a map id to remove a map to the user
 
 **Response Format**
+
 On success, the HTTP status code in the response header is 200 OK and the response body contains a a success message, the user id, and added/removed map id JSON format. On error, the header status code is an error code and the response body contains a rails error message.
 
+**Example**
 
+```PATCH http://localhost:3000/api/users/4?map_id=1&add=true```
+```
+{
+  "message": "Map added to user",
+  "map": 1,
+  "user": 4
+}
+```
 
 ### Error Codes
 
