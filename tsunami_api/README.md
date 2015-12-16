@@ -33,7 +33,19 @@ Rails Route | HTTP Verb | Endpoint                      | Access
 **UPDATE**  | `PATCH`   | `/api/maps/:id`               | token required
 **UPDATE**  | `PUT`     | `/api/maps/:id`               | token required
 **DESTROY** | `DELETE`  | `/api/maps/:id`               | token required
-**CREATE**  | `POST`    | `/api/token`                  | 
+**INDEX**   | `GET`     | `/api/cities/`                | 
+**CREATE**  | `POST`    | `/api/cities`                 | token required
+**SHOW**    | `GET`     | `/api/cities/:id`             | 
+**UPDATE**  | `PATCH`   | `/api/cities/:id`             | token required
+**UPDATE**  | `PUT`     | `/api/cities/:id`             | token required
+**DESTROY** | `DELETE`  | `/api/cities/:id`             | token required
+**INDEX**   | `GET`     | `/api/pins/`                  | token required
+**CREATE**  | `POST`    | `/api/pins`                   | token required
+**SHOW**    | `GET`     | `/api/pins/:id`               | token required
+**UPDATE**  | `PATCH`   | `/api/pins/:id`               | token required
+**UPDATE**  | `PUT`     | `/api/pins/:id`               | token required
+**DESTROY** | `DELETE`  | `/api/pins/:id`               | token required
+**CREATE**  | `POST`    | `/api/token`                  | email/password required
 **SHOW**    | `GET`     | `/api/me`                     | token required
 
 <a name="postUser"></a>
