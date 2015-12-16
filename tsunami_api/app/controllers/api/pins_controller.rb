@@ -1,5 +1,4 @@
-class Pin < ActiveRecord::Base
-
+class Api::PinsController < ApplicationController
 
 
 end

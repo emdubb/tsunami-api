@@ -1,4 +1,4 @@
-class City < ActiveRecord::Base
+class Api::CitiesController < ApplicationController
 
   before_action :authorize, except: [:index, :show]
 
@@ -22,7 +22,6 @@ class City < ActiveRecord::Base
   def show
     render status: :not_found unless @city = City.find(params[:id])
   end
-
 
 
   private
