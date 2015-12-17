@@ -1,10 +1,10 @@
 # Southern California Tsunami Evacuation Resource API
 
-*[OVERVIEW]*(#overview)
-*[GETTING STARTED]*(#start)
-*[ENDPOINT REFERENCE]*(#endpoint)
-*[AUTHORIZATION]*(#auth)
-*[DATA MODEL]*(#model)
+_**[OVERVIEW](#overview)**_
+_**[GETTING STARTED](#start)**_
+_**[ENDPOINT REFERENCE](#endpoint)**_
+_**[AUTHORIZATION](#auth)**_
+_**[DATA MODEL](#model)**_
 
 <a name="overview"></a>
 ## Overview
