@@ -18,29 +18,30 @@ Run `bundle install`
 
 ## Endpoint Reference
 
-Rails Route | HTTP Verb  | Endpoint                      | Access    
-:----------:|:----------:|-------------------------------|:---------------:
-**INDEX**   | `GET`      | `/`                           | 
-**INDEX**   | `GET`      | `/api/users`                  | token required
-**CREATE**  | `POST`     | `/api/users`                  | 
-**SHOW**    | `GET`      | `/api/users/:id`              | token required
-**UPDATE**  | `PATCH/PUT`| [`/api/users/:id`](#postUser) | token required
-**DESTROY** | `DELETE`   | `/api/users/:id`              | token required
-**CREATE**  | `POST`     | `/api/users/:id/pins`         | token required
-**UPDATE**  | `PATCH/PUT`| `/api/users/:id/pins/:id`     | token required
-**DESTROY** | `DELETE`   | `/api/users/:id/pins/:id`     | token required
-**INDEX**   | `GET`      | `/api/maps/`                  | 
-**CREATE**  | `POST`     | `/api/maps`                   | token required
-**SHOW**    | `GET`      | `/api/maps/:id`               | 
-**UPDATE**  | `PATCH/PUT`| `/api/maps/:id`               | token required
-**DESTROY** | `DELETE`   | `/api/maps/:id`               | token required
-**INDEX**   | `GET`      | `/api/cities/`                | 
-**CREATE**  | `POST`     | `/api/cities`                 | token required
-**SHOW**    | `GET`      | `/api/cities/:id`             | 
-**UPDATE**  | `PATCH/PUT`| `/api/cities/:id`             | token required
-**DESTROY** | `DELETE`   | `/api/cities/:id`             | token required
-**CREATE**  | `POST`     | `/api/token`                  | email/password required
-**SHOW**    | `GET`      | `/api/me`                     | token required
+Rails Route | HTTP Verb  | Endpoint                                | Access    
+:----------:|:----------:|-----------------------------------------|:---------------:
+**INDEX**   | `GET`      | `/`                                     | 
+**INDEX**   | `GET`      | `/api/users`                            | token required
+**CREATE**  | `POST`     | `/api/users`                            | 
+**SHOW**    | `GET`      | `/api/users/:id`                        | token required
+**UPDATE**  | `PATCH/PUT`| [`/api/users/:id`](#postUser)           | token required
+**DESTROY** | `DELETE`   | `/api/users/:id`                        | token required
+**INDEX**   | `GET`      | [`/api/users/:id/pins`](#getPins)       | token required
+**CREATE**  | `POST`     | [`/api/users/:id/pins`](#createPins)    | token required
+**UPDATE**  | `PATCH/PUT`| [`/api/users/:id/pins/:id`](#updatePins)| token required
+**DESTROY** | `DELETE`   | `/api/users/:id/pins/:id`               | token required
+**INDEX**   | `GET`      | `/api/maps/`                            | 
+**CREATE**  | `POST`     | `/api/maps`                             | token required
+**SHOW**    | `GET`      | `/api/maps/:id`                         | 
+**UPDATE**  | `PATCH/PUT`| `/api/maps/:id`                         | token required
+**DESTROY** | `DELETE`   | `/api/maps/:id`                         | token required
+**INDEX**   | `GET`      | `/api/cities/`                          | 
+**CREATE**  | `POST`     | `/api/cities`                           | token required
+**SHOW**    | `GET`      | `/api/cities/:id`                       | 
+**UPDATE**  | `PATCH/PUT`| `/api/cities/:id`                       | token required
+**DESTROY** | `DELETE`   | `/api/cities/:id`                       | token required
+**CREATE**  | `POST`     | `/api/token`                            | email/password required
+**SHOW**    | `GET`      | `/api/me`                               | token required
 
 <a name="postUser"></a>
 ### Update User 
@@ -74,7 +75,24 @@ On success, the HTTP status code in the response header is 200 OK and the respon
   "user": 4
 }
 `
+<a name="getPins"></a>
+### Get Pins
 
+**Endpoint**
+
+`GET http://localhost:3000/api/users/:id`
+
+**Request Parameters**
+
+Query argument | Value
+---------------|------------------------------
+`map_id`       | *Required.* An integer referencing a map id
+
+**Response Format**
+
+On success, the HTTP status code in the response header is 200 OK and the response body contains all the users pins for the queried map. On error, the header status code is a 404 record not found error.
+
+<a name="createPins"></a>
 ### Create Pins
 
 **Endpoint**
@@ -103,6 +121,7 @@ On success, the HTTP status code in the response header is 200 OK and the respon
     }
 }`
 
+<a name="updatePins"></a>
 ###Update Pins
 
 Only the name, address, phone, CSS_location, and location may be updated. If the `map_id` or the `user_id` is sent in the request the header status code is a 500 server error.
