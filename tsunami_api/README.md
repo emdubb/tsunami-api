@@ -82,6 +82,7 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 `GET http://localhost:3000/api/users/:id`
 
+
 **Request Parameters**
 
 Query argument | Value
@@ -91,6 +92,37 @@ Query argument | Value
 **Response Format**
 
 On success, the HTTP status code in the response header is 200 OK and the response body contains all the users pins for the queried map. On error, the header status code is a 404 record not found error.
+
+**Example**
+
+`GET http://localhost:3000/api/users/55/pins?map_id=66`
+
+`[
+  {
+    "id": 60,
+    "name": "School",
+    "address": "456 Grand St",
+    "phone": "9172429522",
+    "coordinates": null,
+    "created_at": "2015-12-17T05:11:26.288Z",
+    "updated_at": "2015-12-17T05:11:26.288Z",
+    "css_location": null,
+    "user_id": 55,
+    "map_id": 66
+  },
+  {
+    "id": 61,
+    "name": "Nanny",
+    "address": "456 Grand St",
+    "phone": "9172429522",
+    "coordinates": null,
+    "created_at": "2015-12-17T05:16:09.058Z",
+    "updated_at": "2015-12-17T05:16:09.058Z",
+    "css_location": null,
+    "user_id": 55,
+    "map_id": 66
+  }
+]`
 
 <a name="createPins"></a>
 ### Create Pins
