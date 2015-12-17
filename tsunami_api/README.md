@@ -75,6 +75,35 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 }
 ```
 
+### Create Pins
+
+**Endpoint**
+
+```POST http://localhost:3000/api/users/:id/pins```
+
+**Request Parameters**
+
+Query argument | Value
+---------------|------------------------------
+`map_id`       | *Required.* An integer referencing a map id
+
+**Response Format**
+
+On success, the HTTP status code in the response header is 200 OK and the response body contains a success message and the pin id in JSON format. On error, the header status code is a 404 record now found error.
+
+**Example**
+
+```POST http://localhost:3000/api/users/55/pins?map_id=66```
+```
+{ 
+    "pin": {
+      "name": "School",
+      "address": "456 Grand St",
+      "phone": "9172429522"
+    }
+}
+```
+
 ### Error Codes
 
 Code      | Title                | Reasons for Error
