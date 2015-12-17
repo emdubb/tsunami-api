@@ -47,7 +47,7 @@ Rails Route | HTTP Verb  | Endpoint                      | Access
 
 **Endpoint**
 
-```PATCH http://localhost:3000/api/users/:id```
+`PATCH http://localhost:3000/api/users/:id`
 
 **Request Parameters**
 
@@ -66,20 +66,20 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 **Example**
 
-```PATCH http://localhost:3000/api/users/4?map_id=1&add=true```
-```
+`PATCH http://localhost:3000/api/users/4?map_id=1&add=true`
+`
 {
   "message": "Map added to user",
   "map": 1,
   "user": 4
 }
-```
+`
 
 ### Create Pins
 
 **Endpoint**
 
-```POST http://localhost:3000/api/users/:id/pins```
+`POST http://localhost:3000/api/users/:id/pins`
 
 **Request Parameters**
 
@@ -89,20 +89,23 @@ Query argument | Value
 
 **Response Format**
 
-On success, the HTTP status code in the response header is 200 OK and the response body contains a success message and the pin id in JSON format. On error, the header status code is a 404 record now found error.
+On success, the HTTP status code in the response header is 200 OK and the response body contains a success message and the pin id in JSON format. On error, the header status code is a 404 record not found error.
 
 **Example**
 
-```POST http://localhost:3000/api/users/55/pins?map_id=66```
-```
-{ 
+`POST http://localhost:3000/api/users/55/pins?map_id=66`
+
+`{ 
     "pin": {
       "name": "School",
       "address": "456 Grand St",
       "phone": "9172429522"
     }
-}
-```
+}`
+
+###Update Pins
+
+Only the name, address, phone, CSS_location, and location may be updated. If the `map_id` or the `user_id` is sent in the request the header status code is a 500 server error.
 
 ### Error Codes
 
