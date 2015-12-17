@@ -97,7 +97,8 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 ```GET http://localhost:3000/api/users/55/pins?map_id=66```
 
-```[
+```
+[
   {
     "id": 60,
     "name": "School",
@@ -122,7 +123,8 @@ On success, the HTTP status code in the response header is 200 OK and the respon
     "user_id": 55,
     "map_id": 66
   }
-]```
+]
+```
 
 <a name="createPins"></a>
 ### Create Pins
@@ -145,13 +147,15 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 ```POST http://localhost:3000/api/users/55/pins?map_id=66```
 
-```{ 
+```
+{ 
     "pin": {
       "name": "School",
       "address": "456 Grand St",
       "phone": "9172429522"
     }
-}```
+}
+```
 
 <a name="updatePins"></a>
 ###Update Pins
