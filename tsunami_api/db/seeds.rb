@@ -123,6 +123,7 @@ map4 = Map.create(
   hospital_title: "Hospital",
   hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
   hospital_url: nil
+)
 
 coronado_city.maps << map1
 coronado_city.maps << map2
