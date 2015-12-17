@@ -18,35 +18,29 @@ Run `bundle install`
 
 ## Endpoint Reference
 
-Rails Route | HTTP Verb | Endpoint                      | Access    
-:----------:|:---------:|-------------------------------|:---------------:
-**INDEX**   | `GET`     | `/`                           | 
-**INDEX**   | `GET`     | `/api/users`                  | token required
-**CREATE**  | `POST`    | `/api/users`                  | 
-**SHOW**    | `GET`     | `/api/users/:id`              | token required
-**UPDATE**  | `PATCH`   | [`/api/users/:id`](#postUser) | token required
-**UPDATE**  | `PUT`     | `/api/users/:id`              | token required
-**DESTROY** | `DELETE`  | `/api/users/:id`              | token required
-**INDEX**   | `GET`     | `/api/maps/`                  | 
-**CREATE**  | `POST`    | `/api/maps`                   | token required
-**SHOW**    | `GET`     | `/api/maps/:id`               | 
-**UPDATE**  | `PATCH`   | `/api/maps/:id`               | token required
-**UPDATE**  | `PUT`     | `/api/maps/:id`               | token required
-**DESTROY** | `DELETE`  | `/api/maps/:id`               | token required
-**INDEX**   | `GET`     | `/api/cities/`                | 
-**CREATE**  | `POST`    | `/api/cities`                 | token required
-**SHOW**    | `GET`     | `/api/cities/:id`             | 
-**UPDATE**  | `PATCH`   | `/api/cities/:id`             | token required
-**UPDATE**  | `PUT`     | `/api/cities/:id`             | token required
-**DESTROY** | `DELETE`  | `/api/cities/:id`             | token required
-**INDEX**   | `GET`     | `/api/pins/`                  | token required
-**CREATE**  | `POST`    | `/api/pins`                   | token required
-**SHOW**    | `GET`     | `/api/pins/:id`               | token required
-**UPDATE**  | `PATCH`   | `/api/pins/:id`               | token required
-**UPDATE**  | `PUT`     | `/api/pins/:id`               | token required
-**DESTROY** | `DELETE`  | `/api/pins/:id`               | token required
-**CREATE**  | `POST`    | `/api/token`                  | email/password required
-**SHOW**    | `GET`     | `/api/me`                     | token required
+Rails Route | HTTP Verb  | Endpoint                      | Access    
+:----------:|:----------:|-------------------------------|:---------------:
+**INDEX**   | `GET`      | `/`                           | 
+**INDEX**   | `GET`      | `/api/users`                  | token required
+**CREATE**  | `POST`     | `/api/users`                  | 
+**SHOW**    | `GET`      | `/api/users/:id`              | token required
+**UPDATE**  | `PATCH/PUT`| [`/api/users/:id`](#postUser) | token required
+**DESTROY** | `DELETE`   | `/api/users/:id`              | token required
+**CREATE**  | `POST`     | `/api/users/:id/pins`         | token required
+**UPDATE**  | `PATCH/PUT`| `/api/users/:id/pins/:id`     | token required
+**DESTROY** | `DELETE`   | `/api/users/:id/pins/:id`     | token required
+**INDEX**   | `GET`      | `/api/maps/`                  | 
+**CREATE**  | `POST`     | `/api/maps`                   | token required
+**SHOW**    | `GET`      | `/api/maps/:id`               | 
+**UPDATE**  | `PATCH/PUT`| `/api/maps/:id`               | token required
+**DESTROY** | `DELETE`   | `/api/maps/:id`               | token required
+**INDEX**   | `GET`      | `/api/cities/`                | 
+**CREATE**  | `POST`     | `/api/cities`                 | token required
+**SHOW**    | `GET`      | `/api/cities/:id`             | 
+**UPDATE**  | `PATCH/PUT`| `/api/cities/:id`             | token required
+**DESTROY** | `DELETE`   | `/api/cities/:id`             | token required
+**CREATE**  | `POST`     | `/api/token`                  | email/password required
+**SHOW**    | `GET`      | `/api/me`                     | token required
 
 <a name="postUser"></a>
 ### Update User 
