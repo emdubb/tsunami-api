@@ -1,9 +1,9 @@
 # Southern California Tsunami Evacuation Resource API
 
-_**[OVERVIEW](#overview)**_
-_**[GETTING STARTED](#start)**_
-_**[ENDPOINT REFERENCE](#endpoint)**_
-_**[AUTHORIZATION](#auth)**_
+_**[OVERVIEW](#overview)**_ | 
+_**[GETTING STARTED](#start)**_ | 
+_**[ENDPOINT REFERENCE](#endpoint)**_ | 
+_**[AUTHORIZATION](#auth)**_ | 
 _**[DATA MODEL](#model)**_
 
 <a name="overview"></a>
