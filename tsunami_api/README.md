@@ -1,21 +1,30 @@
 # Southern California Tsunami Evacuation Resource API
 
+*[OVERVIEW]*(#overview)
+*[GETTING STARTED]*(#start)
+*[ENDPOINT REFERENCE]*(#endpoint)
+*[AUTHORIZATION]*(#auth)
+*[DATA MODEL]*(#model)
+
+<a name="overview"></a>
 ## Overview
 
 This API provides access to materials for emergency planning for tsunami evacuation
 in Southern California.
 
-## Technologies Used
+### Technologies Used
 
 * Ruby/Rails
 * jBuilder
 * jwt
 * [PostgreSQL](http://www.postgresql.org/docs/)
 
+<a name="start"></a>
 ## Getting Started
 
 Run `bundle install`
 
+<a name="endpoint"></a>
 ## Endpoint Reference
 
 Rails Route | HTTP Verb  | Endpoint                                | Access    
@@ -162,16 +171,10 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 Only the name, address, phone, CSS_location, and location may be updated. If the `map_id` or the `user_id` is sent in the request the header status code is a 500 server error.
 
-### Error Codes
+<a name="auth"></a>
+###Authorization
 
-Code      | Title                | Reasons for Error
-----------|----------------------|----------------------------------
-`400`     | Bad Request          | Not sending JSON as the body; malformed JSON (parse errors).
-`401`     | Unauthorized         | Failed to send authorization credentials (token); malformed credentials.
-`403`     | Forbidden		   	 | Authentication credentials were given, but failed to authorize for this resources.
-`404`     | Not Found            |	Route does not exist; used in place of a `403 Forbidden` for many routes so that unique ids are not "leaked".
-`422`     | Unprocessable Entity | Sending invalid fields or failing validation on those fields.
-
+<a name="model"></a>
 ###Data Models
 
 *Users*
