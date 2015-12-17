@@ -47,8 +47,10 @@ class Api::UsersController < ApplicationController
       else
         render json: {message: "Missing params for map action: add, remove, or default."}
       end
+    elsif user && user.update(user_params)
+      render json: {message: "User info updated.", user: user}
     else
-      render json: {message: "Missing map_id parameter."}
+      render status: :unprocessable_entity
     end
   end
 
