@@ -21,14 +21,14 @@ user1 = User.create(
   fname: "John",
   lname: "Smith",
   email: "test1@email.com",
-  password_digest: "abc123"
+  password: "abc123"
 )
 
 user2 = User.create(
   fname: "Rachel",
   lname: "Bascetta",
   email: "test2@email.com",
-  password_digest: "abc123",
+  password: "abc123",
   emer_name1: "Mom",
   emer_phone1: "1234567890"
 )
@@ -37,7 +37,7 @@ user3 = User.create(
   fname: "Melissa",
   lname: "Wilcox",
   email: "test3@email.com",
-  password_digest: "abc123",
+  password: "abc123",
   emer_name1: "Dad",
   emer_phone1: "0987654321"
 )
@@ -123,32 +123,6 @@ map4 = Map.create(
   hospital_title: "Hospital",
   hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
   hospital_url: nil
-)
-
-pin1 = Pin.create(
-  name: "Home",
-  address: "501 W Olympic Blvd",
-  phone: "9712429522",
-  coordinates: nil
-)
-
-pin2 = Pin.create(
-  name: "School",
-  address: "123 Main St",
-  phone: "9712429522",
-  coordinates: nil
-)
-
-pin3 = Pin.create(
-  name: "Nanny",
-  address: "729 Flower St",
-  phone: "9712429522",
-  coordinates: nil
-)
-
-map1.pins << pin1
-map1.pins << pin2
-map2.pins << pin3
 
 coronado_city.maps << map1
 coronado_city.maps << map2
