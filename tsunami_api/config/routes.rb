@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: [:index, :show, :create, :update, :destroy] do
-        resources :pins, only: [:create, :update, :destroy]
+        resources :pins, only: [:create, :show, :update, :destroy]
     end
     resources :maps, only: [:index, :show, :create, :update, :destroy]
     resources :cities, only: [:index, :show, :create, :update, :destroy]
