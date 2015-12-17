@@ -2,6 +2,13 @@ class Api::PinsController < ApplicationController
 
   before_action :authorize
 
+  #GET /api/users/:id/pins
+  def index
+    user = User.find(params[:user_id])
+    pins = user.pins.from_map(params[:map_id])
+    render json: pins
+  end
+
   #POST /api/users/:id/pins
   def create
     user = User.find(params[:user_id])
