@@ -48,7 +48,7 @@ Rails Route | HTTP Verb  | Endpoint                                | Access
 
 **Endpoint**
 
-`PATCH http://localhost:3000/api/users/:id`
+```PATCH http://localhost:3000/api/users/:id```
 
 **Request Parameters**
 
@@ -67,20 +67,20 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 **Example**
 
-`PATCH http://localhost:3000/api/users/4?map_id=1&add=true`
-`
+```PATCH http://localhost:3000/api/users/4?map_id=1&add=true```
+```
 {
   "message": "Map added to user",
   "map": 1,
   "user": 4
 }
-`
+```
 <a name="getPins"></a>
 ### Get Pins
 
 **Endpoint**
 
-`GET http://localhost:3000/api/users/:id`
+```GET http://localhost:3000/api/users/:id```
 
 
 **Request Parameters**
@@ -95,9 +95,9 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 **Example**
 
-`GET http://localhost:3000/api/users/55/pins?map_id=66`
+```GET http://localhost:3000/api/users/55/pins?map_id=66```
 
-`[
+```[
   {
     "id": 60,
     "name": "School",
@@ -122,14 +122,14 @@ On success, the HTTP status code in the response header is 200 OK and the respon
     "user_id": 55,
     "map_id": 66
   }
-]`
+]```
 
 <a name="createPins"></a>
 ### Create Pins
 
 **Endpoint**
 
-`POST http://localhost:3000/api/users/:id/pins`
+```POST http://localhost:3000/api/users/:id/pins```
 
 **Request Parameters**
 
@@ -143,15 +143,15 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 
 **Example**
 
-`POST http://localhost:3000/api/users/55/pins?map_id=66`
+```POST http://localhost:3000/api/users/55/pins?map_id=66```
 
-`{ 
+```{ 
     "pin": {
       "name": "School",
       "address": "456 Grand St",
       "phone": "9172429522"
     }
-}`
+}```
 
 <a name="updatePins"></a>
 ###Update Pins
