@@ -1,4 +1,4 @@
 class Map < ActiveRecord::Base
   has_and_belongs_to_many :users, uniq: true
-  has_many :pins
+  has_many :pins, through: :users
 end
