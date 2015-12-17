@@ -177,10 +177,82 @@ Only the name, address, phone, CSS_location, and location may be updated. If the
 <a name="model"></a>
 ###Data Models
 
-*Users*
+*User*
 
-Key       | Value Type       | Description 
-----------|------------------|----------------------------------
+Key                   | Value Type       | Description 
+----------------------|------------------|----------------------------------
+`fname`               | String
+`lname`               | String
+`email`               | String
+`password`            | String
+`default_map`         | Integer
+`emer_hospital`       | Text
+`emer_meeting_area`   | Text
+`emer_name1`          | String
+`emer_phone1`         | String
+`emer_name2`          | String
+`emer_phone2`         | String
+`emer_name3`          | String
+`emer_phone3`         | String
+
+*Map*
+
+Key                   | Value Type       | Description 
+----------------------|------------------|----------------------------------
+`city_id`             | Integer
+`name`                | String
+`zone`                | String
+`type`                | String
+`map_url`             | String
+`flood_area_title`    | String
+`flood_area_url`      | String
+`naval_area_title`    | String
+`naval_area_url`      | String
+`evac_route_title`    | String
+`evac_route_url`      | String
+`closure_title`       | String
+`closure_url`         | String
+`railway_title`       | String
+`railway_url`         | String
+`biketrail_title`     | String
+`biketrail_url`       | String 
+`beach_access_title`  | String
+`beach_access_url`    | String
+`refuge_title`        | String
+`refuge_locations`    | String
+`refuge_url`          | String
+`evacuation_titl`     | String
+`evacuation_locations`| String
+`evacuation_url`      | String
+`landmark_title`      | String
+`landmark_url`        | String
+`hospital_title`      | String
+`hospital_locations`  | String
+`hospital_url`        | String
+
+*Pin*
+
+Key                   | Value Type       | Description 
+----------------------|------------------|----------------------------------
+`name`                | String
+`address`             | String
+`phone`               | String
+`coordinates`         | String
+
+*City*
+
+Key                   | Value Type       | Description 
+----------------------|------------------|----------------------------------
+`name`                | String
+`county`              | String
+`twitter`             | String
+`email`               | String
+`website1`            | String
+`website2`            | String
+`website3`            | String
+`mobile_app`          | String
+`facebook`            | String
+`station`             | String
 
 
 ---
