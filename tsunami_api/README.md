@@ -23,6 +23,7 @@ in Southern California.
 ## Getting Started
 
 Run `bundle install`
+Serve in terminal with `rails s`
 
 <a name="endpoint"></a>
 ## Endpoint Reference
