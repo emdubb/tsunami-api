@@ -16,6 +16,114 @@ coronado_city = City.create(
   facebook: nil,
   station: nil
 )
+san_diego_city = City.create(
+  name: "San Diego",
+  county: "San Diego",
+  twitter: nil,
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.sandiego.gov/ohs",
+  website3: "www.tsunami.gov",
+  mobile_app: "SD Emergency",
+  facebook: nil,
+  station: nil
+)
+imperial_beach = City.create(
+  name: "Imperial Beach",
+  county: "San Diego",
+  twitter: "@CityofIB",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.imperialbeachca.gov",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: nil,
+  station: nil
+)
+carlsbad = City.create(
+  name: "Carlsbad",
+  county: "San Diego",
+  twitter: "@carlsbadcagov",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.carlsbad.gov",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: "Facebook.com/cityofcarlsbad",
+  station: nil
+)
+encinitas = City.create(
+  name: "Encinitas",
+  county: "San Diego",
+  twitter: "@EncinitasFire",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.cityofencinitasfire",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: nil,
+  station: "Radio: 1500AM"
+)
+oceanside = City.create(
+  name: "Oceanside",
+  county: "San Diego",
+  twitter: "@CityofOceanside",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.ci.oceanside.ca.us",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: "Facebook.com/CityofOceanside",
+  station: nil
+)
+solana_beach = City.create(
+  name: "Solana Beach",
+  county: "San Diego",
+  twitter: "@CitySolanaBeach",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.ci.solana-beack.ca.us",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: "Facebook.com/cityofsolanabeach",
+  station: nil
+)
+national_city = City.create(
+  name: "National City",
+  county: "San Diego",
+  twitter: "@CityOfNatlCity",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.nationalcityca.gov",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: nil,
+  station: nil
+)
+del_mar = City.create(
+  name: "Del Mar",
+  county: "San Diego",
+  twitter: "@CityDelMar",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.delmar.ca.us",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: "Facebook.com/CityofDelMar",
+  station: nil
+)
+chula_vista = City.create(
+  name: "Chula Vista",
+  county: "San Diego",
+  twitter: "@thinkchulavista",
+  email: nil,
+  website1: "www.readysandiego.org",
+  website2: "www.chulavistaca.gov",
+  website3: nil,
+  mobile_app: "SD Emergency",
+  facebook: "Facebook.com/ChulaVistaCity",
+  station: nil
+)
 
 user1 = User.create(
   fname: "John",
