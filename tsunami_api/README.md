@@ -32,7 +32,7 @@ Rails Route | HTTP Verb  | Endpoint                                | Access
 :----------:|:----------:|-----------------------------------------|:---------------:
 **INDEX**   | `GET`      | `/`                                     | 
 **INDEX**   | `GET`      | `/api/users`                            | token required
-**CREATE**  | `POST`     | `/api/users`                            | 
+**CREATE**  | `POST`     | [`/api/users`](#createUser)             | 
 **SHOW**    | `GET`      | `/api/users/:id`                        | token required
 **UPDATE**  | `PATCH/PUT`| [`/api/users/:id`](#postUser)           | token required
 **DESTROY** | `DELETE`   | `/api/users/:id`                        | token required
@@ -52,6 +52,51 @@ Rails Route | HTTP Verb  | Endpoint                                | Access
 **DESTROY** | `DELETE`   | `/api/cities/:id`                       | token required
 **CREATE**  | `POST`     | `/api/token`                            | email/password required
 **SHOW**    | `GET`      | `/api/me`                               | token required
+
+
+<a name="createUser"></a>
+### Create User
+
+**Endpoint**
+
+```POST http://localhost:3000/api/users```
+
+**Request Parameters**
+
+Request Body    | Value
+----------------|----------------------
+fname           | *Optional.* 
+lname           | *Optional.* 
+email           | *Required.* 
+password        | *Required.* 
+
+**Response Format**
+
+On success, the HTTP status code in the response header is 200 OK and the response body contains a an access token in JSON format. On error, the header status code is an error code and the response body contains a rails error message.
+
+**Example**
+
+```POST http://localhost:3000/api/users```
+
+Request Body
+
+```
+{
+  "user": { "fname": "Derp",
+            "lname": "McGee",
+            "email": "test4@email.com",
+            "password": "abc123"
+          }
+}
+```
+
+Response
+
+```
+{
+  "token": "eyJ0eXAiO.eyJlbWFpbCI6CI6MTQ1NTI0MzEwMn0.Q_n317YoeAToPecXZlqaQ"
+}
+```
 
 <a name="postUser"></a>
 ### Update User 
@@ -78,6 +123,9 @@ On success, the HTTP status code in the response header is 200 OK and the respon
 **Example**
 
 ```PATCH http://localhost:3000/api/users/4?map_id=1&add=true```
+
+Response
+
 ```
 {
   "message": "Map added to user",
