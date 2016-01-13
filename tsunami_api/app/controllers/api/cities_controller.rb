@@ -4,7 +4,11 @@ class Api::CitiesController < ApplicationController
 
   #GET /api/cities
   def index
-    @cities = City.all
+    if params[:name]
+      @cities = City.city_name(params[:name])
+    else
+      @cities = City.all
+    end
   end
 
   #POST /api/cities
