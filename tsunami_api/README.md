@@ -233,6 +233,8 @@ On success, the HTTP status code in the response header is 200 OK and if there i
 
 **Example**
 
+```GET http://localhost:3000/api/cities?name=Coronado```
+
 ```
 {
   "cities": [
