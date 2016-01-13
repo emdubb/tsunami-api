@@ -235,38 +235,6 @@ On success, the HTTP status code in the response header is 200 OK and if there i
 
 ```http://localhost:3000/api/cities?name=Coronado```
 
-```
-{
-  "cities": [
-    {
-      "name": "Coronado",
-      "county": "San Diego",
-      "maps": [
-        {
-          "map_id": 5,
-          "map_name": "Overview",
-          "map_type": "Driving"
-        },
-        {
-          "map_id": 6,
-          "map_name": "North",
-          "map_type": "Walking"
-        },
-        {
-          "map_id": 7,
-          "map_name": "Mid",
-          "map_type": "Walking"
-        },
-        {
-          "map_id": 8,
-          "map_name": "South",
-          "map_type": "Walking"
-        }
-      ]
-    }
-  ]
-}
-```
 
 <a name="updatePins"></a>
 ###Update Pins
