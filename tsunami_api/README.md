@@ -233,7 +233,7 @@ On success, the HTTP status code in the response header is 200 OK and if there i
 
 **Example**
 
-```http://localhost:3000/api/cities?name=Coronado```
+
 
 
 <a name="updatePins"></a>
