@@ -45,7 +45,7 @@ Rails Route | HTTP Verb  | Endpoint                                | Access
 **SHOW**    | `GET`      | `/api/maps/:id`                         | 
 **UPDATE**  | `PATCH/PUT`| `/api/maps/:id`                         | token required
 **DESTROY** | `DELETE`   | `/api/maps/:id`                         | token required
-**INDEX**   | `GET`      | `/api/cities/`                          | 
+**INDEX**   | `GET`      | [`/api/cities`](#getCities)             | 
 **CREATE**  | `POST`     | `/api/cities`                           | token required
 **SHOW**    | `GET`      | `/api/cities/:id`                       | 
 **UPDATE**  | `PATCH/PUT`| `/api/cities/:id`                       | token required
@@ -212,6 +212,58 @@ On success, the HTTP status code in the response header is 200 OK and the respon
       "address": "456 Grand St",
       "phone": "9172429522"
     }
+}
+```
+<a name="getCities"></a>
+### Show Cities
+
+**Endpoint**
+
+```POST http://localhost:3000/api/cities```
+
+**Request Parameters**
+
+Query argument | Value
+---------------|------------------------------
+`name`         | *Optional.* A string of the name of a city to search by. Case sensitive.
+
+**Response Format**
+
+On success, the HTTP status code in the response header is 200 OK and if there is not a query the response body contains a list of all the cities in JSON format. If there is a query the response body will be the the city that corresponds to the query in JSON format. On error, the header status code is a 404 record not found error.
+
+**Example**
+
+```http://localhost:3000/api/cities?name=Coronado```
+```
+{
+  "cities": [
+    {
+      "name": "Coronado",
+      "county": "San Diego",
+      "maps": [
+        {
+          "map_id": 5,
+          "map_name": "Overview",
+          "map_type": "Driving"
+        },
+        {
+          "map_id": 6,
+          "map_name": "North",
+          "map_type": "Walking"
+        },
+        {
+          "map_id": 7,
+          "map_name": "Mid",
+          "map_type": "Walking"
+        },
+        {
+          "map_id": 8,
+          "map_name": "South",
+          "map_type": "Walking"
+        }
+      ]
+    }
+  ]
 }
 ```
 
