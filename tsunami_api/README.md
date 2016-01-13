@@ -233,7 +233,38 @@ On success, the HTTP status code in the response header is 200 OK and if there i
 
 **Example**
 
-
+```
+{
+  "cities": [
+    {
+      "name": "Coronado",
+      "county": "San Diego",
+      "maps": [
+        {
+          "map_id": 5,
+          "map_name": "Overview",
+          "map_type": "Driving"
+        },
+        {
+          "map_id": 6,
+          "map_name": "North",
+          "map_type": "Walking"
+        },
+        {
+          "map_id": 7,
+          "map_name": "Mid",
+          "map_type": "Walking"
+        },
+        {
+          "map_id": 8,
+          "map_name": "South",
+          "map_type": "Walking"
+        }
+      ]
+    }
+  ]
+}
+```
 
 
 <a name="updatePins"></a>
