@@ -82,9 +82,9 @@ Request Body
 
 ```
 {
-  "user": { "fname": "Derp",
-            "lname": "McGee",
-            "email": "test4@email.com",
+  "user": { "fname": "John",
+            "lname": "Smith",
+            "email": "example@email.com",
             "password": "abc123"
           }
 }
