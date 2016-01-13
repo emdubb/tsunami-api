@@ -1,4 +1,4 @@
-json.cities @cites do |city|
+json.cities @cities do |city|
   json.name city.name
   json.county city.county
   json.maps city.maps do |map|
