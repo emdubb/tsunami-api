@@ -16,7 +16,7 @@ coronado_city = City.create(
   facebook: nil,
   station: nil
 )
-san_diego_city = City.create(
+san_diego = City.create(
   name: "San Diego",
   county: "San Diego",
   twitter: nil,
@@ -82,7 +82,7 @@ solana_beach = City.create(
   twitter: "@CitySolanaBeach",
   email: nil,
   website1: "www.readysandiego.org",
-  website2: "www.ci.solana-beack.ca.us",
+  website2: "www.ci.solana-beach.ca.us",
   website3: nil,
   mobile_app: "SD Emergency",
   facebook: "Facebook.com/cityofsolanabeach",
@@ -150,90 +150,288 @@ user3 = User.create(
   emer_phone1: "0987654321"
 )
 
-map1 = Map.create(
+map1a = Map.create(
   name: "Overview",
   map_type: "Driving",
-  map_url: nil,
+  map_url: "img/coronado_main.svg",
   flood_area_title: "Potential Tsunami Flood Areas",
-  flood_area_url:nil,
+  flood_area_url:"img/legend/flood.svg",
   naval_area_title: "Naval Restricted Area",
-  naval_area_url: nil,
+  naval_area_url: "img/legend/naval.svg",
   evac_route_title: "Tsunami Evacuation Route",
-  evac_route_url: nil,
+  evac_route_url: "img/legend/evac_route.svg",
   closure_title: "Possible Closure Due to Flooding",
-  closure_url: nil,
+  closure_url: "img/legend/closure.svg",
   railway_title: "Railway",
-  railway_url: nil,
+  railway_url: "img/legend/railway.svg",
   evacuation_title: "Potential Evacuation Center",
   evacuation_locations: "Coronado High School Gym | 650 D Ave (between 6th & Dave)",
-  evacuation_url: nil,
+  evacuation_url: "img/legend/evacuation.svg",
   landmark_title: "Landmark",
-  landmark_url: nil,
+  landmark_url: "img/legend/landmark.svg",
+  hospital_title: "Hospital",
+  hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
+  hospital_url: "img/legend/hospital.svg"
+)
+
+map1b = Map.create(
+  name: "North",
+  map_type: "Walking",
+  map_url: "img/coronado_north.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  naval_area_title: "Naval Restricted Area",
+  naval_area_url: "img/legend/naval.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  beach_access_title: "Beach Access",
+  beach_access_url: "img/legend/beach.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg",
+  hospital_title: "Hospital",
+  hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
+  hospital_url: "img/legend/hospital.svg"
+)
+
+map1c = Map.create(
+  name: "Mid",
+  map_type: "Walking",
+  map_url: "img/coronado_mid.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/naval.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/evac_route.svg",
+  beach_access_title: "Beach Access",
+  beach_access_url: "img/legend/closure.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg",
   hospital_title: "Hospital",
   hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
   hospital_url: nil
+)
+
+map1d = Map.create(
+  name: "South",
+  map_type: "Walking",
+  map_url: "img/coronado_south.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url: "img/legend/flood.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  beach_access_title: "Beach Access",
+  beach_access_url: "img/legend/beach.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg",
+  hospital_title: "Hospital",
+  hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
+  hospital_url: "img/legend/landmark.svg"
 )
 
 map2 = Map.create(
-  name: "North",
-  map_type: "Walking",
-  map_url: nil,
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/san_diego.svg",
   flood_area_title: "Potential Tsunami Flood Areas",
-  flood_area_url:nil,
+  flood_area_url:"img/legend/flood.svg",
   naval_area_title: "Naval Restricted Area",
-  naval_area_url: nil,
+  naval_area_url: "img/legend/naval.svg",
   evac_route_title: "Tsunami Evacuation Route",
-  evac_route_url: nil,
+  evac_route_url: "img/legend/evac_route.svg",
   closure_title: "Possible Closure Due to Flooding",
-  closure_url: nil,
-  beach_access_title: "Beach Access",
-  beach_access_url: nil,
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
   landmark_title: "Landmark",
-  landmark_url: nil,
+  landmark_url: "img/legend/landmark.svg",
   hospital_title: "Hospital",
-  hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
-  hospital_url: nil
+  hospital_locations: "Scripps Memorial Hospital La Jolla | 9888 Genesse Ave",
+  hospital_url: "img/legend/hospital.svg"
 )
 
 map3 = Map.create(
-  name: "Mid",
-  map_type: "Walking",
-  map_url: nil,
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/imperial_beach.svg",
   flood_area_title: "Potential Tsunami Flood Areas",
-  flood_area_url:nil,
+  flood_area_url:"img/legend/flood.svg",
+  naval_area_title: "Naval Restricted Area",
+  naval_area_url: "img/legend/naval.svg",
   evac_route_title: "Tsunami Evacuation Route",
-  evac_route_url: nil,
+  evac_route_url: "img/legend/evac_route.svg",
   closure_title: "Possible Closure Due to Flooding",
-  closure_url: nil,
-  beach_access_title: "Beach Access",
-  beach_access_url: nil,
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
   landmark_title: "Landmark",
-  landmark_url: nil,
-  hospital_title: "Hospital",
-  hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
-  hospital_url: nil
+  landmark_url: "img/legend/landmark.svg"
 )
 
 map4 = Map.create(
-  name: "South",
-  map_type: "Walking",
-  map_url: nil,
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/carlsbad.svg",
   flood_area_title: "Potential Tsunami Flood Areas",
-  flood_area_url:nil,
+  flood_area_url:"img/legend/flood.svg",
   evac_route_title: "Tsunami Evacuation Route",
-  evac_route_url: nil,
+  evac_route_url: "img/legend/evac_route.svg",
   closure_title: "Possible Closure Due to Flooding",
-  closure_url: nil,
-  beach_access_title: "Beach Access",
-  beach_access_url: nil,
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
   landmark_title: "Landmark",
-  landmark_url: nil,
-  hospital_title: "Hospital",
-  hospital_locations: "Sharp Coronado Hospital | 250 Prospect Place",
-  hospital_url: nil
+  landmark_url: "img/legend/landmark.svg"
 )
 
-coronado_city.maps << map1
-coronado_city.maps << map2
-coronado_city.maps << map3
-coronado_city.maps << map4
+map5 = Map.create(
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/encinitas.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  naval_area_title: "Naval Restricted Area",
+  naval_area_url: "img/legend/naval.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg",
+  hospital_title: "Hospital",
+  hospital_locations: "Scripps Memorial Hospital | 354 Santa Fe Drive",
+  hospital_url: "img/legend/hospital.svg"
+)
+
+map6 = Map.create(
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/oceanside.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_url: "img/legend/evacuation.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg"
+)
+
+map7 = Map.create(
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/solana_beach.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg"
+)
+
+map8 = Map.create(
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/national_city.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  naval_area_title: "Naval Restricted Area",
+  naval_area_url: "img/legend/naval.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg",
+  hospital_title: "Hospital",
+  hospital_locations: "Paradise Valley Hospital | 2400 E 4th St",
+  hospital_url: "img/legend/hospital.svg"
+)
+
+map9 = Map.create(
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/del_mar.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg"
+)
+
+map10 = Map.create(
+  name: "Overview",
+  map_type: "Driving",
+  map_url: "img/chula_vista.svg",
+  flood_area_title: "Potential Tsunami Flood Areas",
+  flood_area_url:"img/legend/flood.svg",
+  evac_route_title: "Tsunami Evacuation Route",
+  evac_route_url: "img/legend/evac_route.svg",
+  closure_title: "Possible Closure Due to Flooding",
+  closure_url: "img/legend/closure.svg",
+  railway_title: "Railway",
+  railway_url: "img/legend/railway.svg",
+  evacuation_title: "Community Refuge Areas",
+  evacuation_locations: "(Dial 2-1-1 to confirm locations)",
+  evacuation_url: "img/legend/evacuation.svg",
+  landmark_title: "Landmark",
+  landmark_url: "img/legend/landmark.svg",
+  hospital_title: "Hospital",
+  hospital_locations: "Scripps Mercy Hospital | 435 H St",
+  hospital_url: "img/legend/hospital.svg"
+)
+
+coronado_city.maps << map1a
+coronado_city.maps << map1b
+coronado_city.maps << map1c
+coronado_city.maps << map1d
+san_diego.maps << map2
+imperial_beach.maps << map3
+carlsbad.maps << map4
+encinitas.maps << map5
+oceanside.maps << map6
+solana_beach.maps << map7
+national_city.maps << map8
+del_mar.maps << map9
+chula_vista.maps << map10
