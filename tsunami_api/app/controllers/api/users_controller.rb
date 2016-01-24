@@ -26,29 +26,29 @@ class Api::UsersController < ApplicationController
 
   # PATCH/PUT /users/:id
   def update
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
 
     if params[:map_id]
       map = Map.find(params[:map_id])
 
       if params[:add]
-        if user.maps.include?(map)
+        if @user.maps.include?(map)
           render json: {message: "Map already added!"}
         else
-          user.add_map! map
-          render json: {message: "Map added to user", map: map.id, user: user.id}
+          @user.add_map! map
+          # render json: {message: "Map added to user", map: map.id, user: user.id}
         end
       elsif params[:remove]
-        user.remove_map!(map)
-        render json: {message: "User no longer has map.", map: map.id, user: user.id, default_map: user.default_map}
+        @user.remove_map!(map)
+        render json: {message: "User no longer has map.", map: map.id, user: @user.id, default_map: @user.default_map}
       elsif params[:default]
-        user.change_default_map!(map)
-        render json: {message: "User default map updated", default_map: map.id, user: user.id}
+        @user.change_default_map!(map)
+        # render json: {message: "User default map updated", default_map: map.id, user: user.id}
       else
         render json: {message: "Missing params for map action: add, remove, or default."}
       end
-    elsif user && user.update(user_params)
-      render json: {message: "User info updated.", user: user}
+    elsif @user && @user.update(user_params)
+      # render json: {message: "User info updated.", user: user}
     else
       render status: :unprocessable_entity
     end
