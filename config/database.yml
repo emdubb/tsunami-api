@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: tsunami_api_production
-  username: tsunami_api
-  password: <%= ENV['TSUNAMI_API_DATABASE_PASSWORD'] %>
+  username: emdubb
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
+  # password: <%= ENV['TSUNAMI_API_DATABASE_PASSWORD'] %>
