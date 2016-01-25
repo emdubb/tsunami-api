@@ -46,6 +46,9 @@
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
+set :default_env, {
+  'SECRET_KEY_BASE' => 'secret_key_base',
+}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
