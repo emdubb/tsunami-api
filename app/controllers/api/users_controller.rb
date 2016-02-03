@@ -33,7 +33,7 @@ class Api::UsersController < ApplicationController
 
       if params[:add]
         if @user.maps.include?(map)
-          render json: {message: "Map already added!"}
+          render :status => :conflict, :text => "That map has already been added!"
         else
           @user.add_map! map
           # render json: {message: "Map added to user", map: map.id, user: user.id}
