@@ -11,5 +11,6 @@ json.emer_name3 @user.emer_name3
 json.emer_phone3 @user.emer_phone3
 json.maps @user.maps do |map|
   json.map map
+  json.city map.city.map
   json.pins map.pins
 end

@@ -8,5 +8,6 @@ json.cities @cities do |city|
     json.map_type map.map_type
     json.map_url map.map_url
     json.city_id map.city_id
+    json.city map.city.name
   end
 end

@@ -12,4 +12,5 @@ json.maps @user.maps do |map|
   json.city_id map.city_id
   json.map_type map.map_type
   json.map_url map.map_url
+  json.city map.city.name
 end
