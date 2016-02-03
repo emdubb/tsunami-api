@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119034052) do
+ActiveRecord::Schema.define(version: 20160203201339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20160119034052) do
     t.string   "station"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "map_id"
   end
+
+  add_index "cities", ["map_id"], name: "index_cities_on_map_id", using: :btree
 
   create_table "maps", force: :cascade do |t|
     t.string   "name"
@@ -109,6 +112,7 @@ ActiveRecord::Schema.define(version: 20160119034052) do
     t.datetime "updated_at",        null: false
   end
 
+  add_foreign_key "cities", "maps"
   add_foreign_key "maps", "cities"
   add_foreign_key "pins", "maps"
   add_foreign_key "pins", "users"
